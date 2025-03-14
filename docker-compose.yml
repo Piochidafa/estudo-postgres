@@ -1,4 +1,5 @@
 services:
+
   db:
     image: postgres
     container_name: postgres_db
@@ -36,3 +37,13 @@ services:
         /usr/bin/mc policy set public myminio/desafioseplag;
         exit 0;
         "
+
+  app:
+    build: ./app
+    container_name: app-desafio-seplag
+    depends_on:
+      - db
+      - minio
+    restart: always
+    ports:
+      - "8083:8083"
