@@ -23,6 +23,7 @@ services:
       - ./data/minio_data:/data
     ports:
       - "9001:9001"
+      - "9000:9000"
     command: server --console-address ":9001" /data 
 
   minio-create-bucket:
