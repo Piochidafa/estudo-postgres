@@ -4,8 +4,6 @@ services:
     container_name: postgres_db
     restart: always
     environment:
-      POSTGRES_DB: desafioseplag
-      POSTGRES_USER: postgres
       POSTGRES_PASSWORD: postgres
     volumes:
       - ./postgres_data:/var/lib/postgresql/data
